@@ -1,10 +1,12 @@
-import { Request, Response } from "express-serve-static-core";
+// import { Request, Response } from "express-serve-static-core";
+import { Request, Response } from "express";
 import { CreateUserDto } from "../dtos/CreateUser.dt";
 import { CreateUserQueryParams } from "../types/query-params";
 import { User } from "../types/response";
 
 export function getUsers(request: Request, response: Response) {
-  const cus = request.customField; // Example of using the custom field
+  // const cus = request.customField; // Example of using the custom field
+  request.customField = "example"; // Setting a value to the custom field
   response.send([]);
 }
 
